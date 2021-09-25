@@ -1,0 +1,22 @@
+#menu-wrapper {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-button {
+  width: 400px;
+  height: 100px;
+
+  font-size: 30px;
+  background-color: #fc6836;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+}
