@@ -3,7 +3,7 @@
 }
 
 #chart {
-  margin: 0 100px 50px 100px;
+  margin: 0 300px 50px 300px;
   padding-bottom: 50px;
   border-bottom: 1px #feb979 solid;
 }
@@ -23,7 +23,7 @@
   color: #000;
 
   margin-left: -40px;
-  margin-top: -320px;
+  margin-top: -250px;
 
   writing-mode: vertical-lr;
   text-orientation: sideways-right;
@@ -35,12 +35,4 @@
   font-size: 14px;
   color: #000;
   margin-top: 20px;
-}
-
-#hider {
-  position: absolute;
-  height: 25px;
-  width: 100%;
-  background-color: #fff;
-  margin-top: -528px;
 }

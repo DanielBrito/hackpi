@@ -60,7 +60,6 @@ const BarChart = () => {
               </div>
               <Consideration text={"Nossa consideração"} />
               <Bar data={loadData(answer)} options={options} />
-              <div id="hider"></div>
               <div id="y-label">Número de respostas</div>
               <div id="x-label">Tipos de respostas</div>
             </div>
