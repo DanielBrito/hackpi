@@ -7,7 +7,7 @@ const Material = () => {
   return (
     <>
       <Header />
-      <Subtitle text={"Família"} />
+      <Subtitle text={"Material"} />
     </>
   );
 };
