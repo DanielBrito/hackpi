@@ -1,15 +1,13 @@
 import React from "react";
-import Header from "../../components/Header";
 
-import "./styles.css";
+import Header from "../../components/Header";
+import Subtitle from "../../components/Subtitle";
 
 const Material = () => {
   return (
     <>
       <Header />
-      <div id="subtitle">
-        <h2>Material</h2>
-      </div>
+      <Subtitle text={"Família"} />
     </>
   );
 };

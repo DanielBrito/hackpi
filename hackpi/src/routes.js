@@ -18,7 +18,7 @@ const Routes = () => {
       <Route path="/inclusion">
         <Inclusion />
       </Route>
-      <Route path="/Material">
+      <Route path="/material">
         <Material />
       </Route>
     </Switch>

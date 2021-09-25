@@ -1,16 +1,13 @@
 import React from "react";
 
 import Header from "../../components/Header";
-
-import "./styles.css";
+import Subtitle from "../../components/Subtitle";
 
 const Inclusion = () => {
   return (
     <>
       <Header />
-      <div id="subtitle">
-        <h2>Inclusão</h2>
-      </div>
+      <Subtitle text={"Inclusão"} />
     </>
   );
 };

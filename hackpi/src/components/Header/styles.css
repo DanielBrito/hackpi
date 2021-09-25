@@ -12,3 +12,18 @@
   color: #fff;
   margin: 0 auto;
 }
+
+#header-title:hover {
+  cursor: pointer;
+}
+
+#back-icon {
+  height: 30px;
+  width: auto;
+  position: absolute;
+  left: 30px;
+}
+
+#back-icon:hover {
+  cursor: pointer;
+}

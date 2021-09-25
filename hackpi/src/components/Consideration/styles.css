@@ -1,0 +1,17 @@
+h2 {
+  margin-bottom: 0;
+}
+#consideration-text {
+  font-style: italic;
+  font-size: 16px;
+  color: #999999;
+}
+
+#consideration-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px 0;
+}
