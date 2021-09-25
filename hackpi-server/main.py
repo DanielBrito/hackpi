@@ -92,8 +92,8 @@ questions = [
 lazer_labes = {
     "1": "Nada observado",
     "2": "Apenas atividades definidas pelo professor",
-    "3": "Criancas exploram apenas uma atividade de interacao",
-    "4": "Criancas exploram apenas duas ou mais atividade de interacao"
+    "3": "Crianças exploram apenas uma atividade de interação",
+    "4": "Crianças exploram apenas duas ou mais atividade de interação"
 }
 
 lazer_questions = [
@@ -120,11 +120,51 @@ lazer_questions = [
     },
 ]
 
+development_labels = {
+    "1": "Nao Promove",
+    "2": "Promove, mas poderia ser melhor",
+    "3": "Promove",
+    "4": "Nao sabe, Nao respondeu",
+    "Aposentadoria": "0",
+    "Estudar retomar mestrado": "0"
+}
+
+development_questions = [
+    {
+        "title": "De modo geral, você acredita que a rede de educação infantil do seu município está promovendo as condições para o desenvolvimento integral das crianças? - Professor",
+        "column_number": 243,
+        "header_name": "ep_q36",
+        "map_labels": development_labels
+    }, {
+        "title": "De modo geral, você acredita que a rede de educação infantil do seu município está promovendo as condições para o desenvolvimento integral das crianças? - Diretor",
+        "column_number": 332,
+        "header_name": "ed_q21",
+        "map_labels": development_labels
+    },
+]
+
 result = [extract_data_from_question(question, question["map_labels"]) for question in questions]
 result = result + extract_impairment_data()
 
+
+def x(q):
+    x = extract_data_from_question(q, q["map_labels"])
+    if "Aposentadoria" in x:
+        del x["Aposentadoria"]
+    if "Estudar retomar mestrado" in x:
+        del x["Estudar retomar mestrado"]
+    return x
+
+
 lazer_result = [extract_data_from_question(q, q["map_labels"]) for q in lazer_questions]
+development_result = [x(q) for q in development_questions]
 app = Flask(__name__)
+
+
+@app.after_request
+def apply_caching(response):
+    response.headers["Content-Type"] = "text/json; charset=utf-8"
+    return response
 
 
 @app.route("/inclusion")
@@ -135,6 +175,11 @@ def inclusion():
 @app.route("/lazer")
 def lazer():
     return json.dumps(lazer_result)
+
+
+@app.route("/development")
+def development():
+    return json.dumps(development_result)
 
 
 app.run(port=3333)
