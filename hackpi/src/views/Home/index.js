@@ -12,9 +12,6 @@ const Home = () => {
     <>
       <Header />
       <div id="menu-wrapper">
-        <button className="menu-button" onClick={() => history.push("/family")}>
-          Família
-        </button>
         <button
           className="menu-button"
           onClick={() => history.push("/inclusion")}
@@ -26,6 +23,30 @@ const Home = () => {
           onClick={() => history.push("/material")}
         >
           Material
+        </button>
+        <button
+          className="menu-button"
+          onClick={() => history.push("/security")}
+        >
+          Segurança
+        </button>
+        <button
+          className="menu-button"
+          onClick={() => history.push("/children_space")}
+        >
+          Espaço para crianças
+        </button>
+        <button
+          className="menu-button"
+          onClick={() => history.push("/learning")}
+        >
+          Aprendizagem
+        </button>
+        <button
+          className="menu-button"
+          onClick={() => history.push("/development")}
+        >
+          Desenvolvimento
         </button>
       </div>
     </>
