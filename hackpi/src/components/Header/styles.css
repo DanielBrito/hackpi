@@ -27,3 +27,14 @@
 #back-icon:hover {
   cursor: pointer;
 }
+
+#hackpi-icon {
+  height: 40px;
+  margin-right: 15px;
+}
+
+#header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

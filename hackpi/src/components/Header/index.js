@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import backIcon from "../../assets/back.png";
+import hackpiIcon from "../../assets/hackpi.png";
 
 import "./styles.css";
 
@@ -19,9 +20,12 @@ const Header = () => {
           onClick={() => history.goBack()}
         />
       )}
-      <h1 id="header-title" onClick={() => history.push("/")}>
-        HackPI
-      </h1>
+      <div id="header-wrapper">
+        <img src={hackpiIcon} id="hackpi-icon" alt="HackPI" />
+        <h1 id="header-title" onClick={() => history.push("/")}>
+          HackPI
+        </h1>
+      </div>
     </div>
   );
 };
