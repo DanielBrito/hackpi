@@ -40,7 +40,7 @@ const Home = () => {
           className="menu-button"
           onClick={() => history.push("/learning")}
         >
-          Aprendizagem
+          Oportunidade de aprendizagem
         </button>
         <button
           className="menu-button"

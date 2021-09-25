@@ -1,0 +1,50 @@
+[
+  {
+    "data": [
+      {
+        "x": "Criancas exploram apenas duas ou mais atividade de interacao",
+        "y": 92
+      },
+      { "x": "Criancas exploram apenas uma atividade de interacao", "y": 60 },
+      { "x": "Apenas atividades definidas pelo professor", "y": 50 },
+      { "x": "Nada observado", "y": 31 }
+    ],
+    "title": "Oportunidades de aprendizagens que envolvem praticas sociais com espacos, tempos, objetos e suas relacoes"
+  },
+  {
+    "data": [
+      {
+        "x": "Criancas exploram apenas duas ou mais atividade de interacao",
+        "y": 69
+      },
+      { "x": "Criancas exploram apenas uma atividade de interacao", "y": 68 },
+      { "x": "Nada observado", "y": 61 },
+      { "x": "Apenas atividades definidas pelo professor", "y": 35 }
+    ],
+    "title": "Oportunidades de aprendizagens que ampliam a expressao e a criacao por meio das linguagens plasticas"
+  },
+  {
+    "data": [
+      {
+        "x": "Criancas exploram apenas duas ou mais atividade de interacao",
+        "y": 84
+      },
+      { "x": "Criancas exploram apenas uma atividade de interacao", "y": 83 },
+      { "x": "Nada observado", "y": 39 },
+      { "x": "Apenas atividades definidas pelo professor", "y": 27 }
+    ],
+    "title": "Oportunidades de aprendizagens que promovem os movimentos amplos e gestos das criancas em jogos e brincadeiras"
+  },
+  {
+    "data": [
+      {
+        "x": "Criancas exploram apenas duas ou mais atividade de interacao",
+        "y": 108
+      },
+      { "x": "Criancas exploram apenas uma atividade de interacao", "y": 64 },
+      { "x": "Apenas atividades definidas pelo professor", "y": 49 },
+      { "x": "Nada observado", "y": 12 }
+    ],
+    "title": "Momentos de brincadeira livre"
+  }
+]
