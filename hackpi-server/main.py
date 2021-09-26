@@ -58,7 +58,7 @@ def extract_data_from_question(question, labels=q_labels):
     serie = pd.Series([x for x in serie.astype(dtype=str).values if x.isnumeric()])
     count = serie.value_counts()
     data = count.to_dict()
-    data = [{"x": i, "y": data[i]} for i in list(data.keys())]
+    data = [{"x": i, "y": data[i]} for i in list(data.keys()) if i != "9998" and i != "9999"]
     data.sort(key=lambda a: a["x"])
     data = [{"x": labels[d["x"]], "y": d["y"]} for d in data]
     return {
@@ -163,6 +163,123 @@ material_questions = [
     },
 ]
 
+security_labels = {
+    "1": "Não",
+    "2": "Sim, mas somente quando solicitado",
+    "3": "Sim",
+    "4": "Não sabe / Não respondeu"
+}
+
+security_labels2 = {
+    "1": "Não, nunca recebeu formações",
+    "2": "Sim, já recebeu uma vez no passado",
+    "3": "Sim, recebe anualmente",
+    "4": "Não sabe / Não respondeu"
+}
+
+security_questions = [
+    {
+        "title": "A equipe gestora da unidade conhece e implementa procedimentos que visam prevenir problemas de saúde física das(os) professoras(es) e demais profissionais? (por exemplo, cadeiras de tamanho adequado, , etc.)",
+        "column_number": 296,
+        "header_name": "ep_q76",
+        "map_labels": security_labels
+    }, {
+        "title": "Você já recebeu alguma formação sobre primeiros socorros? Com que frequência ocorre?",
+        "column_number": 297,
+        "header_name": "ep_q77",
+        "map_labels": security_labels2
+    },
+]
+
+security_considitions_labels = {
+    "1": "Não",
+    "2": "Sim"
+}
+security_conditions_questions = [
+    {
+        "title": "Pisos quebrados ou desnivelados",
+        "column_number": 140,
+        "header_name": "od_q120",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Materiais lúdicos pontiagudos ou enferrujados",
+        "column_number": 141,
+        "header_name": "od_q121",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Áreas externas com pragas urbanas",
+        "column_number": 142,
+        "header_name": "od_q122",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Fiação exposta ou malconservada",
+        "column_number": 143,
+        "header_name": "od_q123",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Tomadas elétricas sem proteção",
+        "column_number": 144,
+        "header_name": "od_q124",
+        "map_labels": security_considitions_labels
+    },
+    {
+        "title": "Poços/buracos descobertos",
+        "column_number": 145,
+        "header_name": "od_q125",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Área de circulação de veículos sem isolamento por grades ou muros",
+        "column_number": 146,
+        "header_name": "od_q126",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Extintores de incêndio ausentes",
+        "column_number": 147,
+        "header_name": "od_q127",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Extintores de incêndio vencidos",
+        "column_number": 148,
+        "header_name": "od_q128",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Pátio com muito lixo ou pedras",
+        "column_number": 149,
+        "header_name": "od_q129",
+        "map_labels": security_considitions_labels
+    }, {
+        "title": "Outras condições que possam vir a ferir as crianças",
+        "column_number": 150,
+        "header_name": "od_q130",
+        "map_labels": security_considitions_labels
+    },
+]
+
+security_result = [extract_data_from_question(q, q["map_labels"]) for q in security_questions]
+security_conditions_result = [extract_data_from_question(q, q["map_labels"]) for q in security_conditions_questions]
+yes_sum = 0
+not_sum = 0
+for d in security_conditions_result:
+    not_sum += d["data"][0]["y"]
+    yes_sum += d["data"][1]["y"]
+print(not_sum, yes_sum)
+
+security_result = security_result + [
+    {
+        "title": "Há condições de segurança - Observações",
+        "data": [
+            {
+                "x": "Não",
+                "y": round(not_sum / 11.0, 1)
+            }, {
+                "x": "Sim",
+                "y": round(yes_sum / 11.0, 1)
+            },
+        ],
+        "question_id": "OD_Q120 - OD_Q130"
+    }
+]
+
 result = [extract_data_from_question(question, question["map_labels"]) for question in questions]
 result = result + extract_impairment_data()
 
@@ -219,6 +336,11 @@ def development():
 @app.route("/material")
 def material():
     return json.dumps(materia_result)
+
+
+@app.route("/security")
+def security():
+    return json.dumps(security_result)
 
 
 app.run(port=int(os.getenv("PORT", "3333")), host="0.0.0.0")
