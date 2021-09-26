@@ -4,6 +4,7 @@ from pandas import Series
 from flask import Flask
 import json
 import os
+from flask_cors import CORS
 
 dataframe = pd.read_csv("dataset/dataset_prof.csv", skiprows=1)
 
@@ -160,7 +161,7 @@ def x(q):
 lazer_result = [extract_data_from_question(q, q["map_labels"]) for q in lazer_questions]
 development_result = [x(q) for q in development_questions]
 app = Flask(__name__)
-
+CORS(app)
 
 @app.after_request
 def apply_caching(response):
