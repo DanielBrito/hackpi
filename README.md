@@ -2,22 +2,24 @@
 
 ## ℹ️ Sobre
 
-_O estado do Ceará, por meio do Programa Mais Infância Ceará, iniciou uma série de ações apoiando os municípios em políticas de melhoria da qualidade dedicadas à Primeira Infância, garantindo os direitos das crianças de forma intersetorial por meio da Educação, Saúde e Assistência Social, promovendo o desenvolvimento integral._
-
-_Nesse contexto, o Governo do Estado do Ceará, em conjunto com diversas organizações do terceiro setor, vem somando esforços por meio de uma coalizão que, via regime de colaboração, tem como objetivo promover o desenvolvimento integral das crianças cearenses, em especial aquelas em situação de extrema vulnerabilidade._
-
-[Referência](https://www.instagram.com/p/CTSxlOErhPi/)
+_O estado do Ceará, por meio do Programa Mais Infância Ceará, iniciou uma série de ações apoiando os municípios em políticas de melhoria da qualidade dedicadas à Primeira Infância, garantindo os direitos das crianças de forma intersetorial por meio da Educação, Saúde e Assistência Social, promovendo o desenvolvimento integral.Nesse contexto, o Governo do Estado do Ceará, em conjunto com diversas organizações do terceiro setor, vem somando esforços por meio de uma coalizão que, via regime de colaboração, tem como objetivo promover o desenvolvimento integral das crianças cearenses, em especial aquelas em situação de extrema vulnerabilidade._ [(Referência)](https://www.instagram.com/p/CTSxlOErhPi/)
 
 ---
 
 ## 💡 Plataforma
 
-A plataforma proposta foi construída com as seguintes ferramentas
+TODO
+
+---
+
+## 🧰 Ferramentas
+
+A plataforma foi construída com as seguintes tecnologias:
 
 - **Front-end:**
 
   - ReactJS
-  - React Char.js
+  - React Chart.js
 
 - **Back-end:**
 
