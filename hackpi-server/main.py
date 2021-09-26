@@ -183,4 +183,4 @@ def development():
     return json.dumps(development_result)
 
 
-app.run(port=int(os.getenv("PORT", "3333")))
+app.run(port=int(os.getenv("PORT", "3333")), host="0.0.0.0")
