@@ -266,7 +266,7 @@ print(not_sum, yes_sum)
 
 security_result = security_result + [
     {
-        "title": "Condições de Segurança",
+        "title": "Há condições de Segurança - Observações",
         "data": [
             {
                 "x": "Não",
