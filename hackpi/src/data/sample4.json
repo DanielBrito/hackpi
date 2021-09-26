@@ -2,6 +2,10 @@
   {
     "data": [
       {
+        "x": "Não Promove",
+        "y": 9
+      },
+      {
         "x": "Promove, mas poderia ser melhor",
         "y": 115
       },
@@ -10,16 +14,8 @@
         "y": 105
       },
       {
-        "x": "Nao Promove",
-        "y": 9
-      },
-      {
         "x": "Nao sabe, Nao respondeu",
         "y": 3
-      },
-      {
-        "x": "0",
-        "y": 1
       }
     ],
     "title": "De modo geral, você acredita que a rede de educação infantil do seu município está promovendo as condições para o desenvolvimento integral das crianças? - Professor"
@@ -35,12 +31,8 @@
         "y": 51
       },
       {
-        "x": "Nao sabe, Nao respondeu",
+        "x": "Não sabe, Não respondeu",
         "y": 2
-      },
-      {
-        "x": "0",
-        "y": 1
       }
     ],
     "title": "De modo geral, você acredita que a rede de educação infantil do seu município está promovendo as condições para o desenvolvimento integral das crianças? - Diretor"

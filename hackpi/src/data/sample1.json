@@ -2,20 +2,20 @@
   {
     "data": [
       {
-        "x": "Concordo totalmente",
-        "y": 141
-      },
-      {
-        "x": "Concordo",
-        "y": 82
+        "x": "Discordo Totalmente",
+        "y": 2
       },
       {
         "x": "Neutro",
         "y": 8
       },
       {
-        "x": "Discordo Totalmente",
-        "y": 2
+        "x": "Concordo",
+        "y": 82
+      },
+      {
+        "x": "Concordo totalmente",
+        "y": 141
       }
     ],
     "title": "Meu trabalho é desenvolvido colaborativamente com a gestão da UE"
@@ -23,20 +23,21 @@
   {
     "data": [
       {
-        "x": "Concordo totalmente",
-        "y": 133
-      },
-      {
-        "x": "Concordo",
-        "y": 92
+        "x": "Discordo",
+        "y": 1
       },
       {
         "x": "Neutro",
         "y": 7
       },
       {
-        "x": "Discordo",
-        "y": 1
+        "x": "Concordo",
+        "y": 92
+      },
+
+      {
+        "x": "Concordo totalmente",
+        "y": 133
       }
     ],
     "title": "Os materiais de apoio disponibilizados pela Secretaria Estadual colaboram para o exercício da minha profissão"
@@ -44,8 +45,8 @@
   {
     "data": [
       {
-        "x": "Concordo",
-        "y": 73
+        "x": "Discordo Totalmente",
+        "y": 11
       },
       {
         "x": "Discordo",
@@ -56,16 +57,16 @@
         "y": 61
       },
       {
+        "x": "Não sabe",
+        "y": 2
+      },
+      {
+        "x": "Concordo",
+        "y": 73
+      },
+      {
         "x": "Concordo totalmente",
         "y": 15
-      },
-      {
-        "x": "Discordo Totalmente",
-        "y": 11
-      },
-      {
-        "x": "Nao sabe",
-        "y": 2
       }
     ],
     "title": "Me sinto preparada(o) para educar crianças com deficiências, TEA ou altas habilidades"

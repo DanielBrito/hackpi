@@ -2,28 +2,28 @@
   {
     "data": [
       {
-        "x": "Concordo",
-        "y": 73
+        "x": "Discordo Totalmente",
+        "y": 11
       },
       {
         "x": "Discordo",
         "y": 71
       },
       {
+        "x": "Não sabe",
+        "y": 2
+      },
+      {
         "x": "Neutro",
         "y": 61
       },
       {
+        "x": "Concordo",
+        "y": 73
+      },
+      {
         "x": "Concordo totalmente",
         "y": 15
-      },
-      {
-        "x": "Discordo Totalmente",
-        "y": 11
-      },
-      {
-        "x": "Nao sabe",
-        "y": 2
       }
     ],
     "title": "Me sinto preparada(o) para educar crianças com deficiências, TEA ou altas habilidades"
@@ -42,7 +42,7 @@
     "title": "Há crianças com diversidades funcionais, transtornos globais do desenvolvimento, altas habilidades ou superdotação nesta turma?"
   },
   {
-    "title": "Há crianças com deficiências X Profissionais na unidade dedicados somente ao trabalho com crianças comdeficiência?",
+    "title": "Há crianças com deficiências X Profissionais na unidade dedicados somente ao trabalho com crianças com deficiência?",
     "data": [
       {
         "x": "Crianças com deficiências",
