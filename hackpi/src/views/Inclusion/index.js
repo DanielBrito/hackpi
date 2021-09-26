@@ -16,8 +16,6 @@ const Inclusion = () => {
     const loadData = async () => {
       let data = await getInclusionData();
       setAnswers(data);
-
-      console.log(data);
     };
 
     loadData();

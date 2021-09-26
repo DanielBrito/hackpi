@@ -24,6 +24,10 @@ export const getMaterial = async () => {
   return response;
 };
 
-export const getSecurity = async () => {};
+export const getSecurity = async () => {
+  let response = await fetch(`${BASE_URL}/security`);
+  response = await response.json();
+  return response;
+};
 
 export const getLearning = async () => {};
