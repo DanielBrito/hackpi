@@ -1,14 +1,15 @@
 h2 {
   margin-bottom: 0;
 }
-#consideration-text {
+
+.consideration-text {
   font-style: italic;
   font-size: 16px;
   color: #999999;
   text-align: center;
 }
 
-#consideration-wrapper {
+.consideration-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;

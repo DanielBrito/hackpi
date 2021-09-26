@@ -14,7 +14,7 @@ q_labels = {
     "3": "Neutro",
     "4": "Concordo",
     "5": "Concordo totalmente",
-    "6": "Nao sabe"
+    "6": "Não sabe"
 }
 
 label_questionnaire = {
@@ -35,7 +35,7 @@ def extract_impairment_data():
     values = [int(v) for v in serie.values if _filter(v)]
     count_2 = sum(values)
     return [{
-        "title": "Há crianças com deficiências X Profissionais na unidade dedicados somente ao trabalho com crianças comdeficiência?",
+        "title": "Há crianças com deficiências X Profissionais na unidade dedicados somente ao trabalho com crianças com deficiência?",
         "data": [
             {
                 "x": "Crianças com deficiências",
@@ -115,10 +115,10 @@ lazer_questions = [
 ]
 
 development_labels = {
-    "1": "Nao Promove",
+    "1": "Não Promove",
     "2": "Promove, mas poderia ser melhor",
     "3": "Promove",
-    "4": "Nao sabe, Nao respondeu",
+    "4": "Não sabe, Não respondeu",
     "Aposentadoria": "0",
     "Estudar retomar mestrado": "0"
 }
