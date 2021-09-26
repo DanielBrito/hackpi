@@ -3,6 +3,7 @@ import numpy as np
 from pandas import Series
 from flask import Flask
 import json
+import os
 
 dataframe = pd.read_csv("dataset/dataset_prof.csv", skiprows=1)
 
@@ -182,4 +183,4 @@ def development():
     return json.dumps(development_result)
 
 
-app.run(port=3333)
+app.run(port=int(os.getenv("PORT", "3333")))
