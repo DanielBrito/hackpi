@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import BarChart from "../../components/BarChart";
 
-import answers from "../../data/sample4.json";
+import answers from "../../data/payload4.json";
 
 const Development = () => {
   return (

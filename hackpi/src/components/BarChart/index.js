@@ -49,17 +49,17 @@ const options = {
 const BarChart = ({ payload }) => {
   return (
     <>
-      <div id="wrapper">
+      <div className="wrapper">
         {payload.map((answer, index) => (
-          <div id="chart" key={index}>
+          <div className="chart" key={index}>
             <div className="header">
               <h3 className="title">{answer.title}</h3>
             </div>
             <Consideration text={"Nossa consideração"} />
             <Bar data={loadData(answer)} options={options} />
-            <div id="y-label">Número de respostas</div>
-            <div id="x-label">Respostas</div>
-            <div id="hider"></div>
+            <div className="y-label">Número de respostas</div>
+            <div className="x-label">Respostas</div>
+            <div className="hider"></div>
           </div>
         ))}
       </div>

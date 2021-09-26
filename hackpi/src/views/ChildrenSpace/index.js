@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import BarChart from "../../components/BarChart";
 
-import answers from "../../data/sample3.json";
+import answers from "../../data/payload3.json";
 
 const ChildrenSpace = () => {
   return (
