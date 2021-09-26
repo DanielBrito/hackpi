@@ -25,7 +25,7 @@ const ChildrenSpace = () => {
     <>
       <Header />
       <Subtitle text={"Espaço para crianças"} />
-      <Consideration text={"Considerações..."} />
+      <Consideration texts={[]} />
       {answers !== null && <BarChart payload={answers} />}
     </>
   );

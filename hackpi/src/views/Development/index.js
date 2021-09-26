@@ -25,7 +25,13 @@ const Development = () => {
     <>
       <Header />
       <Subtitle text={"Desenvolvimento"} />
-      <Consideration text={"Considerações..."} />
+      <Consideration
+        texts={[
+          "(EP_Q36) - Aproximadamente 49% da amostragem mostrou que o município está promovendo as condições para o desenvolvimento integral das crianças, porém relatam que poderia ser melhor.",
+          "(ED_Q21) - A amostragem mostrou que  o município está promovendo as condições para o desenvolvimento integral das crianças.",
+          "Conclusão: No geral, há a promoção das condições por parte do município, porém cabe analisar onde poderia ser melhor, visto que a visão dos professores ficaram distintas dos diretores.",
+        ]}
+      />
       {answers !== null && <BarChart payload={answers} />}
     </>
   );

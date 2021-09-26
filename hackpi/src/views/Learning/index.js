@@ -13,7 +13,7 @@ const Learning = () => {
     <>
       <Header />
       <Subtitle text={"Acompanhamento de aprendizagem"} />
-      <Consideration text={"Considerações..."} />
+      <Consideration texts={[]} />
     </>
   );
 };
