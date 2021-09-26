@@ -45,7 +45,8 @@ def extract_impairment_data():
                 "x": "Profissionais na unidade dedicados",
                 "y": count_2
             }
-        ]
+        ],
+        "question_id": "ED_Q63_EXTRA e ED_Q74"
     }]
 
 
@@ -54,32 +55,20 @@ extract_impairment_data()
 
 def extract_data_from_question(question, labels=q_labels):
     serie: Series = dataframe.iloc[:, question["column_number"]]
-    serie = serie.dropna()
+    serie = pd.Series([x for x in serie.astype(dtype=str).values if x.isnumeric()])
     count = serie.value_counts()
     data = count.to_dict()
-    del data[question["header_name"]]
     data = [{"x": i, "y": data[i]} for i in list(data.keys())]
     data.sort(key=lambda a: a["x"])
     data = [{"x": labels[d["x"]], "y": d["y"]} for d in data]
     return {
         "data": data,
-        "title": question["title"]
+        "title": question["title"],
+        "question_id": question["header_name"].upper()
     }
 
 
 questions = [
-    # {
-    #     "title": "Meu trabalho é desenvolvido colaborativamente com a gestão da UE",
-    #     "column_number": 232,
-    #     "header_name": "ep_q26",
-    #     "map_labels": q_labels
-    # },
-    # {
-    #     "title": "Os materiais de apoio disponibilizados pela Secretaria Estadual colaboram para o exercício da minha profissão (considere os do ciclo formativo, brincando em família e o material estruturado da Nova Escola)",
-    #     "column_number": 231,
-    #     "header_name": "ep_q24",
-    #     "map_labels": q_labels
-    # },
     {
         "title": "Me sinto preparada(o) para educar crianças com deficiências, TEA ou altas habilidades",
         "column_number": 237,
@@ -148,6 +137,32 @@ development_questions = [
     },
 ]
 
+materia_labels = {
+    "1": "Não",
+    "2": "Às vezes",
+    "3": "Sim",
+    "4": "Não sabe / Não respondeu"
+}
+materia_labels2 = {
+    "1": "Não",
+    "2": "Sim, mas somente quando solicitado",
+    "3": "Sim",
+    "4": "Não sabe / Não respondeu"
+}
+material_questions = [
+    {
+        "title": "Há manutenção e reposição de equipamentos quando necessário?",
+        "column_number": 417,
+        "header_name": "ed_q96",
+        "map_labels": materia_labels
+    }, {
+        "title": "Você considera que os recursos financeiros são suficientes?",
+        "column_number": 420,
+        "header_name": "ed_q99",
+        "map_labels": materia_labels2
+    },
+]
+
 result = [extract_data_from_question(question, question["map_labels"]) for question in questions]
 result = result + extract_impairment_data()
 
@@ -161,18 +176,21 @@ def x(q):
     return x4
 
 
+materia_result = [extract_data_from_question(q, q["map_labels"]) for q in material_questions]
 lazer_result = [extract_data_from_question(q, q["map_labels"]) for q in lazer_questions]
 development_result = [x(q) for q in development_questions]
 final_development_result = []
 for i in range(len(development_result)):
     final_development_result.append({
         "data": [],
-        "title": development_result[i]["title"]
+        "title": development_result[i]["title"],
+        "question_id": development_result[i]["question_id"]
     })
     for j in range(len(development_result[i]["data"])):
         if development_result[i]["data"][j]["x"] == "0":
             continue
         final_development_result[i]["data"].append(development_result[i]["data"][j])
+
 app = Flask(__name__)
 CORS(app)
 
@@ -196,6 +214,11 @@ def lazer():
 @app.route("/development")
 def development():
     return json.dumps(final_development_result)
+
+
+@app.route("/material")
+def material():
+    return json.dumps(materia_result)
 
 
 app.run(port=int(os.getenv("PORT", "3333")), host="0.0.0.0")
