@@ -7,7 +7,7 @@ const Learning = () => {
   return (
     <>
       <Header />
-      <Subtitle text={"Oportunidade de aprendizagem"} />
+      <Subtitle text={"Acompanhamento de aprendizagem"} />
     </>
   );
 };

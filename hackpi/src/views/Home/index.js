@@ -53,7 +53,7 @@ const Home = () => {
           onClick={() => history.push("/learning")}
         >
           <FaChalkboardTeacher className="icon" />
-          Aprendizagem
+          Acompanhamento de aprendizagem
         </button>
         <button
           className="menu-button"
