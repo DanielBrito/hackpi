@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import BarChart from "../../components/BarChart";
 
-import answers from "../../data/payload2.json";
+import { getInclusionData } from "../../service/dataService";
 
 const Inclusion = () => {
+  const [answers, setAnswers] = useState(null);
+
+  useEffect(() => {
+    document.title = "HackPI - Inclusão";
+
+    const loadData = async () => {
+      let data = await getInclusionData();
+      setAnswers(data);
+    };
+
+    loadData();
+  }, []);
+
   return (
     <>
       <Header />
       <Subtitle text={"Inclusão"} />
-      <BarChart payload={answers} />
+      {answers !== null && <BarChart payload={answers} />}
     </>
   );
 };

@@ -8,7 +8,7 @@ _O estado do Ceará, por meio do Programa Mais Infância Ceará, iniciou uma sé
 
 ## 💡 Plataforma
 
-TODO
+Nosso projeto tem como foco potencializar o uso e a interpretação de dados. Assim, seguindo esta premissa, por meio da base que foi disponibilizada no início do evento, buscamos obter resultados que possibilitem a geração de informações, as quais, por sua vez, podem ser úteis para tomadas de decisão nos diferentes eixos abrangidos pelo projeto da Primeira Infância.
 
 ---
 
@@ -25,6 +25,7 @@ A plataforma foi construída com as seguintes tecnologias:
 
   - Flask
   - Pandas
+  - Heroku
 
 ---
 

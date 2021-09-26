@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaHandHoldingHeart,
   FaPencilRuler,
@@ -15,6 +15,10 @@ import "./styles.css";
 
 const Home = () => {
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = "HackPI - Início";
+  }, []);
 
   return (
     <>
