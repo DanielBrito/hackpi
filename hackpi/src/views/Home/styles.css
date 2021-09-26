@@ -10,7 +10,7 @@
   width: 400px;
   height: 50px;
 
-  font-size: 20px;
+  font-size: 25px;
   background-color: #fc6836;
   border: none;
   border-radius: 10px;
@@ -19,4 +19,9 @@
 
 button:hover {
   cursor: pointer;
+}
+
+.icon {
+  height: 20px;
+  margin-right: 15px;
 }
