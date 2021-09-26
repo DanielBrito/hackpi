@@ -25,7 +25,14 @@ const Security = () => {
     <>
       <Header />
       <Subtitle text={"Segurança"} />
-      <Consideration text={"Considerações..."} />
+      <Consideration
+        texts={[
+          "(EP_Q76) - Quase 33% dos professores não recebem treinamento para prevenir problemas de saúde física.",
+          "(EP_Q77) - Apenas 2% recebe treinamento de primeiros socorros anualmente.",
+          "(OD_Q120 - OD_Q130) - Mais de 80% das creches não apresentam condições de segurança.",
+          "Conclusão: Como os dados nos mostram,a maioria dos profissionais não recebem treinamento para prevenir problemas fisicos, ou atendimento de primeiros socorros.",
+        ]}
+      />
       {answers !== null && <BarChart payload={answers} />}
     </>
   );

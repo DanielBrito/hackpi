@@ -25,7 +25,13 @@ const Material = () => {
     <>
       <Header />
       <Subtitle text={"Material"} />
-      <Consideration text={"Considerações..."} />
+      <Consideration
+        texts={[
+          "(ED_Q96) - Aproximadamente 45% dos materiais não recebem manutenção ou são repostos quando necessário, enquanto o restante só é trocado às vezes.",
+          "(ED_Q99) - Aproximadamente 55% dos diretores considera que os recursos são insuficientes.",
+          "Conclusão: Como os dados nos mostram, muitos dos materiais não são trocados quando necessários, pela falta de recursos que são repassados as escolas.",
+        ]}
+      />
       {answers !== null && <BarChart payload={answers} />}
     </>
   );
