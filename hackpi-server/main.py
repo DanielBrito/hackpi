@@ -58,8 +58,11 @@ def extract_data_from_question(question, labels=q_labels):
     count = serie.value_counts()
     data = count.to_dict()
     del data[question["header_name"]]
+    data = [{"x": i, "y": data[i]} for i in list(data.keys())]
+    data.sort(key=lambda a: a["x"])
+    data = [{"x": labels[d["x"]], "y": d["y"]} for d in data]
     return {
-        "data": [{"x": labels[i], "y": data[i]} for i in list(data.keys())],
+        "data": data,
         "title": question["title"]
     }
 
@@ -150,18 +153,29 @@ result = result + extract_impairment_data()
 
 
 def x(q):
-    x = extract_data_from_question(q, q["map_labels"])
-    if "Aposentadoria" in x:
-        del x["Aposentadoria"]
-    if "Estudar retomar mestrado" in x:
-        del x["Estudar retomar mestrado"]
-    return x
+    x4 = extract_data_from_question(q, q["map_labels"])
+    if "Aposentadoria" in x4:
+        del x4["Aposentadoria"]
+    if "Estudar retomar mestrado" in x4:
+        del x4["Estudar retomar mestrado"]
+    return x4
 
 
 lazer_result = [extract_data_from_question(q, q["map_labels"]) for q in lazer_questions]
 development_result = [x(q) for q in development_questions]
+final_development_result = []
+for i in range(len(development_result)):
+    final_development_result.append({
+        "data": [],
+        "title": development_result[i]["title"]
+    })
+    for j in range(len(development_result[i]["data"])):
+        if development_result[i]["data"][j]["x"] == "0":
+            continue
+        final_development_result[i]["data"].append(development_result[i]["data"][j])
 app = Flask(__name__)
 CORS(app)
+
 
 @app.after_request
 def apply_caching(response):
@@ -181,7 +195,7 @@ def lazer():
 
 @app.route("/development")
 def development():
-    return json.dumps(development_result)
+    return json.dumps(final_development_result)
 
 
 app.run(port=int(os.getenv("PORT", "3333")), host="0.0.0.0")
