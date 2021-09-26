@@ -18,7 +18,11 @@ export const getDevelopment = async () => {
   return response;
 };
 
-export const getMaterial = async () => {};
+export const getMaterial = async () => {
+  let response = await fetch(`${BASE_URL}/material`);
+  response = await response.json();
+  return response;
+};
 
 export const getSecurity = async () => {};
 

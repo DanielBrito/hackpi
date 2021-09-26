@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Subtitle from "../../components/Subtitle";
 import BarChart from "../../components/BarChart";
+import Consideration from "../../components/Consideration";
 
 import { getDevelopment } from "../../service/dataService";
 
@@ -24,6 +25,7 @@ const Development = () => {
     <>
       <Header />
       <Subtitle text={"Desenvolvimento"} />
+      <Consideration text={"Considerações..."} />
       {answers !== null && <BarChart payload={answers} />}
     </>
   );

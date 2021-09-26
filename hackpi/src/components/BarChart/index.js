@@ -1,8 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-import Consideration from "../Consideration";
-
 import "./styles.css";
 
 const loadData = (answer) => {
@@ -53,9 +51,8 @@ const BarChart = ({ payload }) => {
         {payload.map((answer, index) => (
           <div className="chart" key={index}>
             <div className="header">
-              <h3 className="title">{answer.title}</h3>
+              <h3 className="title">{`${answer.title} (${answer.question_id})`}</h3>
             </div>
-            <Consideration text={"Nossa consideração"} />
             <Bar data={loadData(answer)} options={options} />
             <div className="y-label">Número de respostas</div>
             <div className="x-label">Respostas</div>
