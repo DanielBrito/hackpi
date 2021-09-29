@@ -35,6 +35,6 @@ A plataforma foi construída com as seguintes tecnologias:
 
 ![Menu principal](previa_menu.png "Menu principal")
 
-### Menu Principal
+### Gráfico
 
 ![Gráfico](previa_grafico.png "Exemplo de gráfico")
