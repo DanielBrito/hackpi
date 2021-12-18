@@ -38,3 +38,11 @@ A plataforma foi construída com as seguintes tecnologias:
 ### Gráfico
 
 ![Gráfico](previa_grafico.png "Exemplo de gráfico")
+
+---
+
+## :trophy: Resultado
+
+No final do evento, nossa equipe (Cactus) foi eleita vencedora na temática escolhida. Uma [matéria](https://www.ufc.br/noticias/16182-equipes-formadas-por-estudantes-e-egressos-da-ufc-vencem-hackathon-para-a-primeira-infancia-cearense) sobre esta conquista foi publicada no Portal de Notícias da UFC.
+
+![Foto da matéria](./foto_materia_ufc.jpg)
